@@ -1,0 +1,76 @@
+.brand img {
+  float: left;
+  margin-right: 5px;
+}
+
+.chat {
+  margin-top: 5px;
+  width: 100%;
+  border: 1px solid #000000;
+  padding-top: 5px;
+  overflow: hidden;
+}
+
+.chat .msg {
+  margin-left: 3px;
+}
+
+.chat .router {
+  max-width: 75%;
+  background-color: #b3b3b3;
+}
+
+.router.triangle-isosceles:after {
+  border-color: #b3b3b3 transparent;
+}
+
+.chat .user {
+  max-width: 70%;
+  float: right;
+  margin-right: 5px;
+  background: #f5f5f5;
+}
+
+.user.triangle-isosceles:after {
+  border-color: #f5f5f5 transparent;
+}
+
+#send-chat input[type=submit] {
+  float: right
+}
+
+.uses {
+  font-size: 60%;
+  color: #cccccc;
+}
+
+.hidden {
+  display: none
+}
+
+/* Bubble with an isoceles triangle
+From: http://nicolasgallagher.com/pure-css-speech-bubbles/
+------------------------------------------ */
+
+.triangle-isosceles {
+  position: relative;
+  padding: 15px;
+  margin: 1em 0 3em;
+  color: #000;
+  background: #f3961c;
+  border-radius: 10px;
+  background: linear-gradient(top, #f9d835, #f3961c);
+}
+
+/* creates triangle */
+.triangle-isosceles:after {
+  content: "";
+  display: block; /* reduce the damage in FF3.0 */
+  position: absolute;
+  bottom: -15px;
+  left: 50px;
+  width: 0;
+  border-width: 15px 15px 0;
+  border-style: solid;
+  border-color: #b3b3b3 transparent;
+}

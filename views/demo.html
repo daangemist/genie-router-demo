@@ -1,0 +1,88 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>genie-router Demo</title>
+
+  <link rel="stylesheet" href="demo/assets/unnamed.min.css">
+  <link rel="stylesheet" href="demo/assets/main.css">
+</head>
+
+<body>
+  <!--[if IE]>
+  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div class="container header" id="top">
+    <div class="brand">
+      <h2>genie-router</h2>
+      <a href="https://www.matuera.net/genie-router" class="logo"><img src="demo/assets/logo.svg" /></a>
+      <p>A generic platform that will route commands and conversations from voice or text-based clients to 3rd party backends. This allows
+      you to interact to different services via your own defined set of input channels.</p>
+      View on <a href="https://github.com/matueranet/genie-router" target="_blank" class="github">Github</a> |
+      Follow on <a href="https://twitter.com/matueranet" target="_blank" class="twitter">Twitter</a> |
+      <a href="#" class="show-intro hidden">Show introduction</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="chat">
+      <div class="router msg triangle-isosceles">
+        <p>Hi, this demo will show you some of the possibilities of genie-router. It uses the
+        <a href="https://github.com/matueranet/genie-router-plugin-api-http" target="_blank">HTTP API</a> plugin to send
+        data to the router. Additional example channels are set up that will interact with the same setup.<br />
+        <a href="https://telegram.me/genierouterbot">Telegram</a> - <a href="https://m.me/genierouter" target="_blank">Facebook Messenger</a></p>
+        <p>Besides clients, genie-router also has the concepts of <i>Brains</li>. These are plugins for services
+          than can handle input and generate an output to display. In this demo two brains are integrated:
+          <a href="https://github.com/matueranet/genie-router-plugin-rivescript" target="_blank">rivescript</a> and
+          <a href="https://github.com/matueranet/genie-router-plugin-dialogflow" target="_blank">dialogflow</a>. Rivescript
+          is a scripting engine, the demo uses an <a href="https://en.wikipedia.org/wiki/ELIZA" target="_blank">ELIZA</a>
+          implementation by the author of <a href="https://github.com/aichaos/rivescript-js/blob/master/eg/brain/eliza.rive" target="_blank">rivescript</a>.
+          The dialogflow agent is trained to answer some generic questions about genie-router.</p>
+        <p>
+          How is the distinction made between the two brains? The <a href="https://github.com/matueranet/genie-router-plugin-brain-mentions" target="_blank">mentions</a>
+          plugin allows you to invoke different brains by mentioning their plugin name, or a configured alias. For this demo the dialogflow agent
+          is dubbed <i>genie</i>. The rivescript plugin is configured as the default brain, if no brain is mentioned in the input.
+        </p>
+      </div>
+      <div class="user msg triangle-isosceles hidden"></div>
+    </div>
+    <form id="send-chat">
+      <div class="input-field">
+       <span class="edit-icon"></span>
+       <input type="text" class="chat-input" placeholder="Type your text to send." />
+      </div>
+    </form>
+    &nbsp;
+    <div class="row">
+      <div class="column xlarge-6 large-6 medium-6 small-6">
+        <a class="btn btn-primary gradient-black" id="send-randomized">Send randomized input</a>
+      </div>
+      <div class="column xlarge-6 large-6 medium-6 small-6">
+        Chat via <a href="https://telegram.me/genierouterbot">Telegram</a> or <a href="https://m.me/genierouter" target="_blank">Facebook Messenger</a>.</p>
+      </div>
+    </div>
+    <div class="uses">Uses the <a href="http://smakosh.com/unnamed/index.html" target="_blank">unnamed CSS framework</a>. Textballoon via <a href="http://nicolasgallagher.com/pure-css-speech-bubbles/" target="_blank">here</a>.</div>
+  </div>
+
+  <script type="text/javascript" src="demo/assets/jquery.min.js"></script>
+  <script type="text/javascript" src="demo/assets/main.js"></script>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', '{{tracking-id}}', 'auto');
+    ga('send', 'pageview');
+    $(document).ready(function() {
+      startChat('{{endpoint}}')
+    })
+  </script>
+</body>
+</html>
