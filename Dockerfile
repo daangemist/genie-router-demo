@@ -1,7 +1,6 @@
 FROM node:6
 
-# TODO temporary until genie-router is in npm.
-RUN npm install -g matueranet/genie-router#develop; \
+RUN npm install -g genie-router@1.0.0; \
   useradd -s /bin/bash -d /home/app app; \
   mkdir /home/app; chown app:app /home/app
 
