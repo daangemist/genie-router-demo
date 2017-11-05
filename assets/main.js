@@ -58,7 +58,8 @@ function randomizeUserInput () {
 }
 
 function sendGenieInput () {
-  return getRandomValue([
+  var sentence = getRandomValue(['Ask genie ', 'Tell me genie ', 'Get from genie ', 'Use dialogflow '])
+  return sentence + getRandomValue([
     'who created you?',
     'what does the fox say?',
     'Is there a roadmap?',
