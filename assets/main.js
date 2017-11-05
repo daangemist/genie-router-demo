@@ -1,8 +1,10 @@
-/* global $ */
+/* global $, localStorage */
 var genieRouterEndpoint = null
 var introMessage = null
+var userId = null
 
 function startChat (endpoint) {
+  userId = generateUserId()
   genieRouterEndpoint = endpoint
   introMessage = $('.router').html()
 
@@ -26,7 +28,7 @@ function startChat (endpoint) {
 }
 
 function sendMessage (input) {
-  var inputObj = {input: input}
+  var inputObj = {input: input, metadata: {userId: userId}}
   $('.user').text(input).removeClass('hidden')
   $('.show-intro').removeClass('hidden')
   $('.router').html('<img src="demo/assets/typing.png" width="64" height="16" />')
@@ -56,15 +58,13 @@ function randomizeUserInput () {
 }
 
 function sendGenieInput () {
-  var sentence = []
-  sentence.push(getRandomValue(['Ask genie', 'Tell me genie', 'Get from genie']))
-  sentence.push(getRandomValue(['what is', 'who is', 'where is']))
-  sentence.push(getRandomValue(['the guy', 'the ostrich', 'the animal', 'the owner']))
-  sentence.push(getRandomValue(['which', 'from', 'who']))
-  sentence.push(getRandomValue(['opens', 'closes', 'demoes']))
-  sentence.push(getRandomValue(['the universe', 'number 42', 'aladdin', 'movies']))
-
-  return sentence.join(' ')
+  return getRandomValue([
+    'who created you?',
+    'what does the fox say?',
+    'Is there a roadmap?',
+    'can I add my own plugins?',
+    'what is genie-router?'
+  ])
 }
 
 function sendElizaInput () {
@@ -74,10 +74,24 @@ function sendElizaInput () {
     'No',
     'Which one?',
     'I sometimes feel empty inside',
-    'What do you mean?'
+    'What do you mean?',
+    'Who is there?',
+    'Please respond to this',
+    'Are you intelligent?',
+    'Process this!'
   ])
 }
 
 function getRandomValue (inputArray) {
   return inputArray[Math.floor((Math.random() * inputArray.length))]
+}
+
+function generateUserId () {
+  if (localStorage.getItem('genie-router-demo-userId')) {
+    return localStorage.getItem('genie-router-demo-userId')
+  }
+
+  var id = (new Date()).getTime()
+  localStorage.setItem('genie-router-demo-userId', id)
+  return id
 }

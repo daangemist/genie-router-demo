@@ -1,0 +1,13 @@
+{
+  "name": "genie-router-demo-packages",
+  "dependencies": {
+    "genie-router-demo": "github:matueranet/genie-router-demo#1.0.0",
+    "genie-router-plugin-api-http": "github:matueranet/genie-router-plugin-api-http#1.1.0",
+    "genie-router-plugin-telegram-bot": "github:matueranet/genie-router-plugin-telegram-bot#2.0.0",
+    "genie-router-plugin-facebook-messenger": "github:matueranet/genie-router-plugin-facebook-messenger#1.1.0",
+    "genie-router-plugin-dashbot": "github:matueranet/genie-router-plugin-dashbot#2.0.0",
+    "genie-router-plugin-rivescript": "github:matueranet/genie-router-plugin-rivescript#1.0.0",
+    "genie-router-plugin-sentry": "github:matueranet/genie-router-plugin-sentry#1.0.0",
+    "genie-router-plugin-brain-mentions": "github:matueranet/genie-router-plugin-brain-mentions#1.0.0"
+  }
+}

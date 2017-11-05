@@ -1,3 +1,9 @@
+a {
+  color: #21D4FD;
+}
+a:visited {
+  color: #B721FF;
+}
 .brand img {
   float: left;
   margin-right: 5px;
@@ -15,20 +21,20 @@
   margin-left: 3px;
 }
 
-.chat .router {
+.chat .user {
   max-width: 75%;
-  background-color: #b3b3b3;
+  background-color: #f5f5f5;
 }
 
 .router.triangle-isosceles:after {
   border-color: #b3b3b3 transparent;
 }
 
-.chat .user {
+.chat .router {
   max-width: 70%;
   float: right;
   margin-right: 5px;
-  background: #f5f5f5;
+  background: #b3b3b3;
 }
 
 .user.triangle-isosceles:after {
@@ -41,7 +47,7 @@
 
 .uses {
   font-size: 60%;
-  color: #cccccc;
+  color: #999999;
 }
 
 .hidden {

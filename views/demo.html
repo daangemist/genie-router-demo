@@ -5,7 +5,11 @@
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>genie-router Demo</title>
+  <title>genie-router :: demo</title>
+
+  <meta property="og:title" content="genie-router demo page"/>
+  <meta property="og:url" content="{{endpoint}}"/>
+  <meta property="og:image" content="{{endpoint}}/assets/logo.svg"/>
 
   <link rel="stylesheet" href="demo/assets/unnamed.min.css">
   <link rel="stylesheet" href="demo/assets/main.css">
@@ -21,7 +25,7 @@
       <h2>genie-router</h2>
       <a href="https://www.matuera.net/genie-router" class="logo"><img src="demo/assets/logo.svg" /></a>
       <p>A generic platform that will route commands and conversations from voice or text-based clients to 3rd party backends. This allows
-      you to interact to different services via your own defined set of input channels.</p>
+      you to interact to different services ('brains') via your own defined set of input channels.</p>
       View on <a href="https://github.com/matueranet/genie-router" target="_blank" class="github">Github</a> |
       Follow on <a href="https://twitter.com/matueranet" target="_blank" class="twitter">Twitter</a> |
       <a href="#" class="show-intro hidden">Show introduction</a>
@@ -30,13 +34,14 @@
 
   <div class="container">
     <div class="chat">
+      <div class="user msg triangle-isosceles hidden"></div>
       <div class="router msg triangle-isosceles">
-        <p>Hi, this demo will show you some of the possibilities of genie-router. It uses the
+        <p>Hi, this demo will show you some of the features of genie-router. It uses the
         <a href="https://github.com/matueranet/genie-router-plugin-api-http" target="_blank">HTTP API</a> plugin to send
-        data to the router. Additional example channels are set up that will interact with the same setup.<br />
-        <a href="https://telegram.me/genierouterbot">Telegram</a> - <a href="https://m.me/genierouter" target="_blank">Facebook Messenger</a></p>
-        <p>Besides clients, genie-router also has the concepts of <i>Brains</li>. These are plugins for services
-          than can handle input and generate an output to display. In this demo two brains are integrated:
+        your input to the router. Additional channels are set up that will interact with the same setup,
+        in <a href="https://telegram.me/genierouterbot">Telegram</a> and <a href="https://m.me/genierouter" target="_blank">Facebook Messenger</a></p>
+        <p>Besides clients, genie-router also has the concepts of <i>Brains</i>. These are plugins for services
+          than process input and generate an output to display. In this demo two brains are integrated:
           <a href="https://github.com/matueranet/genie-router-plugin-rivescript" target="_blank">rivescript</a> and
           <a href="https://github.com/matueranet/genie-router-plugin-dialogflow" target="_blank">dialogflow</a>. Rivescript
           is a scripting engine, the demo uses an <a href="https://en.wikipedia.org/wiki/ELIZA" target="_blank">ELIZA</a>
@@ -48,12 +53,11 @@
           is dubbed <i>genie</i>. The rivescript plugin is configured as the default brain, if no brain is mentioned in the input.
         </p>
       </div>
-      <div class="user msg triangle-isosceles hidden"></div>
     </div>
     <form id="send-chat">
       <div class="input-field">
        <span class="edit-icon"></span>
-       <input type="text" class="chat-input" placeholder="Type your text to send." />
+       <input type="text" class="chat-input" placeholder="Type your input to send and press enter." />
       </div>
     </form>
     &nbsp;
