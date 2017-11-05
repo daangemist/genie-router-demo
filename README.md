@@ -33,7 +33,7 @@ but also a Raspberry Pi or Odroid server (arm7/8 or aarch64).
 
 This will run the container, and restart in the event that is crashes.
 
-    docker run --restart=always --rm -d --env-file=.env -p=8080:8080 matueranet/genie-router-demo
+    docker run --restart=always -d --env-file=.env -p=8080:8080 --name=genie-router-demo matueranet/genie-router-demo
 
 It is advised, because of the nature of the demo, to create a cron script which periodically
 restarts kills and restart the container.
