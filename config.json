@@ -1,0 +1,36 @@
+{
+  "defaultBrain": "rivescript",
+  "http": {
+     "enabled": true,
+     "port": 8080
+  },
+  "plugins": {
+    "api-http": {},
+    "telegram-bot": {
+      "token": "%{TELEGRAM_TOKEN}"
+    },
+    "dialogflow": {
+      "accessToken": "%{DIALOGFLOW_TOKEN}"
+    },
+    "facebook-messenger": {
+      "verifyToken": "genie",
+      "accessToken": "%{MESSENGER_TOKEN}"
+    },
+    "brain-mentions": {
+      "aliases": { "genie": "dialogflow" }
+    },
+    "rivescript": {
+      "scripts": "/home/app/rivescript"
+    },
+    "demo": {
+      "endpoint": "",
+      "tracking_id": "%{TRACKING_ID}"
+    },
+    "dashbot": {
+      "apiKey": "%{DASHBOT_TOKEN}"
+    },
+    "sentry": {
+      "dsn": "%{SENTRY_DSN}"
+    }
+  }
+}
