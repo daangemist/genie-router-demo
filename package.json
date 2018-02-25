@@ -1,6 +1,6 @@
 {
   "name": "genie-router-demo",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A demo page that shows off the features and capabilities of genie-router.",
   "main": "index.js",
   "scripts": {
