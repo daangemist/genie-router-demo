@@ -1,5 +1,5 @@
 a {
-  color: #21D4FD;
+  color: #066F87;
 }
 a:visited {
   color: #B721FF;
@@ -19,26 +19,28 @@ a:visited {
 
 .chat .msg {
   margin-left: 3px;
+  min-width: 100px;
 }
 
 .chat .user {
   max-width: 75%;
-  background-color: #f5f5f5;
+  background-color: #0986ed;
+  float: left;
 }
 
 .router.triangle-isosceles:after {
-  border-color: #b3b3b3 transparent;
+  border-color: #09ed7f transparent;
 }
 
 .chat .router {
   max-width: 70%;
   float: right;
   margin-right: 5px;
-  background: #b3b3b3;
+  background: #09ed7f;
 }
 
 .user.triangle-isosceles:after {
-  border-color: #f5f5f5 transparent;
+  border-color: #0986ed transparent;
 }
 
 #send-chat input[type=submit] {
